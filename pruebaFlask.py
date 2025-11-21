@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from metodos.metodo_grafico.metodografico import metodo_grafico
 from constantes.preguntas import PREGUNTAS
+from modelo.prueba_tensorflow import modelo_cangrejo
 
 app = Flask(__name__)
 app.secret_key = '1234566789'
 
 @app.route('/')
 def index():
+    if 'pregunta_actual' in session:
+        session['pregunta_actual'] = 0
+        session['respuestas'] = []
     return render_template('index.html')
 
 @app.route('/quiz', methods=['GET', 'POST'])
@@ -44,13 +47,11 @@ def quiz():
 @app.route('/resultados')
 def resultados():
     respuestas_guardadas = session.get('respuestas', [])
+    resultado = modelo_cangrejo(respuestas_guardadas)
     # Aquí puedes calcular y mostrar los resultados usando session['respuestas']
-    return render_template('result.html', respuestas=respuestas_guardadas)
+    return render_template('result.html', respuestas=respuestas_guardadas,resultado = resultado)
 
-@app.route('/grafico', methods=['POST'])
-def graphic_method():
-    metodo_grafico()
-    return redirect('/')
+
 
 
 
