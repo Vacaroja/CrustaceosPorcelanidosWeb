@@ -1,0 +1,90 @@
+/* 1. Reset Básico y Estilos del Cuerpo (Mismos que antes) */
+body {
+    background-color: #f4f7f6; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. Estilos del Contenedor Principal (parent) (Mismos que antes) */
+.parent {
+    max-width: 800px; 
+    width: 90%;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.div1 h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* 🌟 3. SEPARACIÓN HORIZONTAL USANDO FLEXBOX 🌟 */
+.opciones-contenedor {
+    display: flex; /* Habilita Flexbox */
+    gap: 30px; /* Espacio entre los elementos (las tarjetas de opción) */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    justify-content: space-around; /* Distribuye las tarjetas con espacio entre ellas */
+    margin-top: 20px;
+}
+
+/* 4. Estilos de la Tarjeta de Opción (div2, div3) */
+.div2, .div3, .opcion-card {
+    /* Establece un ancho para las tarjetas para que ambas quepan lado a lado */
+    width: 50%; 
+    max-width: 350px; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.opcion-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto de levantamiento al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Estilos de las Imágenes */
+.opcion-img {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: auto;
+    max-height: 200px; /* Limita la altura para que no sean demasiado grandes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Espacio entre la imagen y el botón */
+}
+
+/* 6. Estilos del Botón dentro de la Tarjeta */
+.opcion-btn {
+    width: 100%;
+    padding: 15px 20px; /* Un poco menos de padding que antes */
+    border: none; /* Quitamos el borde para un look más limpio */
+    background-color: #007bff; /* Un color primario azul */
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.opcion-btn h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.opcion-btn:hover {
+    background-color: #0056b3; 
+}
