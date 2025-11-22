@@ -4,10 +4,10 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 
-
+##----------------------------------------------Funcion para llamar al modelo ya guardado
 def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     prueba = pd.read_csv("flask/modelo/cangrejos.csv")
-    # simple_list.py
+
     ruta_guardada = "flask/modelo/cangrejos_modelo_guardado.keras"
     try:
         saved_model = tf.keras.models.load_model(ruta_guardada)
@@ -30,15 +30,17 @@ def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     print("----------------------------------------------")
     return str(especie_predicha)
 
+#--------------------------------------------------------------Funcion para el entrenado del modelo
 def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
+    #valor inicial neopisosoma neglectum
+    #primero lee el csv
     prueba = pd.read_csv("flask/modelo/cangrejos.csv")
-    # simple_list.py
-
+    #la convierte en una lista de tipo numpy
     test = np.array(respuestas, dtype=float)
     test = test.reshape(1, -1)
 
     y = prueba['Especie']
-    x = prueba[['superficie_lisa','superficie_irregular','antena_lisa','antena_aserrado','maxilipedos_lisos','maxilipedos_con_surcos','quelipedos_desiguales','quelipedos_iguales','propodo_cuatro','propodo_cinco','telson_siete','telson_cinco','si_pleopodo','no_pleopodo']]
+    x = prueba[['superficie_lisa','superficie_irregular','antena_lisa','antena_aserrado','maxilipedos_lisos','maxilipedos_con_surcos','quelipedos_desiguales','quelipedos_iguales','caparazon_cuadrado','caparazon_rectangular','telson_siete','telson_cinco','si_pleopodo','no_pleopodo']]
 
     x = x.apply(pd.to_numeric,errors='coerce').astype(float)
 
@@ -52,7 +54,7 @@ def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     modelo = tf.keras.Sequential([oculta,segundaOculta, salida])
 
     modelo.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-
+    #modelo a las 300-500 iteraciones el entrenamiento no avanza 
     print("Comenzando entrenamiento...")
     historial = modelo.fit(x, y, epochs=600, verbose=False)
     print("Modelo entrenado!")
