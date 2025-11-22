@@ -10,31 +10,31 @@ PREGUNTAS = [
     },
     {
         'id': 2,
-        'pregunta': '¿Su antena es lisa o es aserrada?',
-        'opciones': ['Liso', 'Con surcos'],
+        'pregunta': '¿Su antena es desarmada(lisa) o tiene una parte aserrada/tuberculado?',
+        'opciones': ['Desarmada', 'Contiene surcos'],
         'imgOpcion1': 'images/caparazon_puntos.png',
         'imgOpcion2': 'images/caparazon_rayas.png'
     },
     {
         'id': 3,
-        'pregunta': '¿sus maxilipedos son lisos o con surcos??',
-        'opciones': ['Liso', 'Con surcos'],
+        'pregunta': '¿sus maxilipedos son lisos/casi lisos o contienen surcos?',
+        'opciones': ['Liso/Casi liso', 'Con surcos'],
         'imgOpcion1': 'images/caparazon_liso.png',
         'imgOpcion2': 'images/caparazon_rugoso.png'
     },
     {
         'id': 4,
-        'pregunta': '¿Tiene quelipedos desiguales o iguales?',
-        'opciones': ['Desiguales', 'Iguales'],
-        'imgOpcion1': 'images/caparazon_liso.png',
-        'imgOpcion2': 'images/caparazon_rugoso.png'
+        'pregunta': '¿Tiene quelipedos desiguales o iguales/subiguales?',
+        'opciones': ['Desiguales', 'Iguales/Subiguales'],
+        'imgOpcion1': 'images/pinzas_desiguales.jpg',
+        'imgOpcion2': 'images/pinzas_iguales.png'
     },
     {
         'id': 5,
-        'pregunta': '¿Cuantos propodos tiene?',
-        'opciones': ['4 o mas', '5 o mas'],
-        'imgOpcion1': 'images/caparazon_liso.png',
-        'imgOpcion2': 'images/caparazon_rugoso.png'
+        'pregunta': '¿Su caparazon es cuadrado/subcuadrado o rectangular??',
+        'opciones': ['Cuadrado/Subcuadrado', 'Rectangular'],
+        'imgOpcion1': 'images/caparazon_cuadrado.jpg',
+        'imgOpcion2': 'images/caparazon_rectangular.jpg'
     },
     {
         'id': 6,
@@ -45,10 +45,10 @@ PREGUNTAS = [
     },
     {
         'id': 7,
-        'pregunta': '¿Los machos tienen pleopodos?',
+        'pregunta': '¿Los machos presentan pleopodos?',
         'opciones': ['NO', 'SI'],
-        'imgOpcion1': 'images/caparazon_liso.png',
-        'imgOpcion2': 'images/caparazon_rugoso.png'
+        'imgOpcion1': 'images/no_pleopodo.jpg',
+        'imgOpcion2': 'images/si_pleopodos.png'
     },
 
     
