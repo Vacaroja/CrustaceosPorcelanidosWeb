@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 
 ##----------------------------------------------Funcion para llamar al modelo ya guardado
 def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
-    prueba = pd.read_csv("flask/modelo/cangrejos.csv")
+    prueba = pd.read_csv("modelo/cangrejos.csv")
 
-    ruta_guardada = "flask/modelo/cangrejos_modelo_guardado.keras"
+    ruta_guardada = "modelo/cangrejos_modelo_guardado.keras"
     try:
         saved_model = tf.keras.models.load_model(ruta_guardada)
     except Exception as e:
@@ -34,7 +34,7 @@ def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
 def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     #valor inicial neopisosoma neglectum
     #primero lee el csv
-    prueba = pd.read_csv("flask/modelo/cangrejos.csv")
+    prueba = pd.read_csv("modelo/cangrejos.csv")
     #la convierte en una lista de tipo numpy
     test = np.array(respuestas, dtype=float)
     test = test.reshape(1, -1)
@@ -58,7 +58,7 @@ def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     print("Comenzando entrenamiento...")
     historial = modelo.fit(x, y, epochs=600, verbose=False)
     print("Modelo entrenado!")
-    ruta = "flask/modelo/cangrejos_modelo_guardado.keras"
+    ruta = "modelo/cangrejos_modelo_guardado.keras"
     modelo.save(ruta)
     
 
