@@ -78,3 +78,4 @@ def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     print(f"La especie de cangrejo clasificada es:"+  str(especie_predicha))
     print("----------------------------------------------")
 
+modelo_cangrejo()
