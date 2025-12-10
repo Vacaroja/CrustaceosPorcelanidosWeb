@@ -50,6 +50,13 @@ PREGUNTAS = [
         'imgOpcion1': 'images/no_pleopodo.jpg',
         'imgOpcion2': 'images/si_pleopodos.png'
     },
+    {
+        'id': 8,
+        'pregunta': '¿Como es su habitat?',
+        'opciones': ['Habitats protegidos(Galerias,colonias y bajo rocas)', 'Habitats Duros(Rocas,corales,grietas de rocas y esponjas)'],
+        'imgOpcion1': 'images/habitat_protegido.jpg',
+        'imgOpcion2': 'images/habitat_duro.jpg'
+    },
 
     
 ]

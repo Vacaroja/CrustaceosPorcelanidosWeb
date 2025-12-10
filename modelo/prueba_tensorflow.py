@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 
 ##----------------------------------------------Funcion para llamar al modelo ya guardado
-def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
+def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0,1,0]):
     prueba = pd.read_csv("modelo/cangrejos.csv")
 
     ruta_guardada = "modelo/cangrejos_modelo_guardado.keras"
@@ -31,7 +31,7 @@ def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     return str(especie_predicha)
 
 #--------------------------------------------------------------Funcion para el entrenado del modelo
-def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
+def entrenar_modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1]):
     #valor inicial neopisosoma neglectum
     #primero lee el csv
     prueba = pd.read_csv("modelo/cangrejos.csv")
@@ -40,7 +40,7 @@ def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     test = test.reshape(1, -1)
 
     y = prueba['Especie']
-    x = prueba[['superficie_lisa','superficie_irregular','antena_lisa','antena_aserrado','maxilipedos_lisos','maxilipedos_con_surcos','quelipedos_desiguales','quelipedos_iguales','caparazon_cuadrado','caparazon_rectangular','telson_siete','telson_cinco','si_pleopodo','no_pleopodo']]
+    x = prueba[['superficie_lisa','superficie_irregular','antena_lisa','antena_aserrado','maxilipedos_lisos','maxilipedos_con_surcos','quelipedos_desiguales','quelipedos_iguales','caparazon_cuadrado','caparazon_rectangular','telson_siete','telson_cinco','si_pleopodo','no_pleopodo','habitats_protegidos','habitats_expuestos']]
 
     x = x.apply(pd.to_numeric,errors='coerce').astype(float)
 
@@ -78,4 +78,4 @@ def entrenar_modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0]):
     print(f"La especie de cangrejo clasificada es:"+  str(especie_predicha))
     print("----------------------------------------------")
 
-modelo_cangrejo()
+
